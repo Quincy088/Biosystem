@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Javascript atkartojums</title>
+    </head>
+    <body>
+        <h1>Javascript</h1>
+        <p>Press F12 key or ctrl+i. Look in console</p>
+        <script>
+            let str = "This is a new string"
+            console.log("My string: ", str)
+            let len=str.length
+            console.log('lenght of string: ', len)
+
+            let includeNew=str.includes('new')
+            console.log('includes new: ', includeNew)
+
+            let cups=str.toUpperCase()
+            let low=str.toLocaleLowerCase()
+            console.log(cups, low)
+
+            let repl=str.replace('This','Hello','this')
+            console.log(repl)
+
+            let text='Today is beautiful weather, '
+            let str1=repl.slice(0,7)
+            let str2=repl.slice(7)
+            newStr=str1.concat(text,str2)
+            console.log(newStr)
+
+            let Name="Myfile.txt" 
+            console.log(Name.slice(Name.lastIndexOf('.')+1))
+            console.log(Name.split(".").pop())
+            console.log("Added Git")
+            console.log("helo")
+
+            let age=28
+            console.log('Person age: ', age)
+            console.log(`Person age: ${age}`)
+
+        </script>
+    </body>
+</html>
