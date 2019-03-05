@@ -50,10 +50,78 @@ let mass1=[1,2]
 let mass2=[4,6,5]
 let mas=mass1.concat(mass2).toString()
 console.log(mas)
+console.log(sp)
 
 // *.uzd Pienienot masiva beigas jaunu elementu un sakartot to alfobetiska
 arr.push("Skoda")
 console.log(arr.sort())
-// 11.uzd 
+console.log(sp)
 
-// 12.uzd
+// 11.uzd iveidot objektu. Human: FirstName, LastName, DateOfBirth, Gender, TripPlace | pievienot/izveidot objekta metodi kas izvada sadu info par objektu: FirstName, LastName, DateOfBirth. 2. Nomaina vardu.
+var person = {
+    FirstName:"John",
+    LastName:"Doe",
+    DateOfBirth:"10.10.2001",
+    Gender:"Male",
+    TripPlace:['Latvia', 'Italy', 'Spain', 'Turky'],
+ fullName : function() {
+     return this.FirstName + " " + this.LastName + " " + this.DateOfBirth;
+ },  
+ changeName : function(name) {
+     this.FirstName=name;
+ },
+ addTrip : function(trip) {
+     this.TripPlace.push(trip)
+ },
+ printTrips : function() {
+     return this.TripPlace;
+ }
+};
+console.log(person.fullName());
+person.changeName('Walter');
+console.log(person.fullName());
+person.addTrip("Heaven");
+console.log(person.TripPlace)
+console.log(person.printTrips());
+console.log(sp)
+
+// 11.4 uzd Pievienot jaunu celojmu vietu esosaja saraksta
+person.TripPlace.push("Hell");
+console.log(person.TripPlace)
+console.log(sp)
+
+// 12.uzd Izveidot class
+class Person{
+    constructor(FirstName, LastName, DateOfBirth, Gender, TripPlace){
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.DateOfBirth = DateOfBirth;
+        this.Gender = Gender;
+        this.TripPlace = TripPlace || [];
+
+    }
+    get fullName() {
+        return this.FirstName + " " + this.LastName + " " + this.DateOfBirth + " " + this.Gender + " " + this.TripPlace
+    }
+    set fullName(name){
+        [this.FirstName,this.LastName]= name.split(' ');
+    }
+}
+let TripPlace = ['Lithuania', 'USA', 'USSR']
+let Human = new Person("Jake", "Doke", "25.12.1949", "Female", TripPlace);
+console.log(Human.fullName);
+Human.fullName = "Alt Mador";
+console.log(Human.fullName);
+console.log(sp)
+
+class Female extends Person{
+    constructor(FirstName,LastName,DateOfBirth){
+        super();
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.DateOfBirth = DateOfBirth;
+        this.Gender='Female';
+    }
+}
+let girl = new Female('Elizabeth', 'Teilor', '10.10.2000');
+console.log(girl.fullName);
