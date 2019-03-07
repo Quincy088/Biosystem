@@ -125,3 +125,4 @@ class Female extends Person{
 }
 let girl = new Female('Elizabeth', 'Teilor', '10.10.2000');
 console.log(girl.fullName);
+console.log(sp)
